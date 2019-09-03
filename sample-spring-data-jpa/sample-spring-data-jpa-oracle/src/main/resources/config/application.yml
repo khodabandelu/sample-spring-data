@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@192.168.161.81:1521:orcl
+    username: tdfr
+    password: tdfr
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    database: oracle
+    show-sql: true
+    hibernate:
+      ddl-auto: update

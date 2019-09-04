@@ -16,15 +16,13 @@
     </parent>
 
     <properties>
-        <oracle-jdbc.version>18.3.0.0</oracle-jdbc.version>
     </properties>
 
     <dependencies>
         <!--DATA-->
         <dependency>
-            <groupId>com.oracle.jdbc</groupId>
-            <artifactId>ojdbc8</artifactId>
-            <version>${oracle-jdbc.version}</version>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
         </dependency>
 
     </dependencies>

@@ -19,7 +19,8 @@
     </properties>
 
     <modules>
-        <module>sample-spring-data-jpa-basic</module>
+        <module>basic</module>
+        <module>oracle</module>
     </modules>
     <dependencies>
         <!--DATA-->

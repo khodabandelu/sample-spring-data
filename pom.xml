@@ -26,8 +26,7 @@
     </properties>
 
     <modules>
-        <module>sample-spring-data-jpa</module>
-        <module>sample-spring-data-jpa-oracle</module>
+        <module>jpa</module>
     </modules>
 
     <dependencies>

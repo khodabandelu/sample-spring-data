@@ -1,4 +1,4 @@
-package org.mak.sample.springdata.jpa.generic.repository.security;
+package org.mak.sample.springdata.jpa.querydsl.repository.security;
 
 import org.mak.sample.springdata.jpa.querydsl.domain.security.User;
 import org.mak.sample.springdata.jpa.querydsl.repository.GenericRepository;

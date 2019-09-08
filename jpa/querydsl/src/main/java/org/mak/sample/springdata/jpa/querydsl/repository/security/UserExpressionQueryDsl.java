@@ -1,4 +1,4 @@
-package org.mak.sample.springdata.jpa.generic.repository.security;
+package org.mak.sample.springdata.jpa.querydsl.repository.security;
 
 import com.querydsl.core.types.dsl.BooleanExpression;
 import org.mak.sample.springdata.jpa.querydsl.domain.security.QUser;

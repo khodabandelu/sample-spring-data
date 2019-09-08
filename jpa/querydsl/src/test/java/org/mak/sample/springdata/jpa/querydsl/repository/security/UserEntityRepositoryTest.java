@@ -1,4 +1,4 @@
-package org.mak.sample.springdata.jpa.generic.repository.security;
+package org.mak.sample.springdata.jpa.querydsl.repository.security;
 
 import org.junit.Assert;
 import org.junit.Test;

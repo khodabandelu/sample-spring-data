@@ -1,9 +1,9 @@
-package org.mak.sample.springdata.jpa.generic.repository.security;
+package org.mak.sample.springdata.jpa.querydsl.repository.security;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mak.sample.springdata.jpa.generic.domain.security.User;
+import org.mak.sample.springdata.jpa.querydsl.domain.security.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

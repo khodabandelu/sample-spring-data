@@ -1,6 +1,6 @@
-package org.mak.sample.springdata.jpa.oracle.security.repository;
+package org.mak.sample.springdata.jpa.oracle.repository.security;
 
-import org.mak.sample.springdata.jpa.oracle.security.domain.User;
+import org.mak.sample.springdata.jpa.oracle.domain.security.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

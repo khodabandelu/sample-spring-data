@@ -1,4 +1,4 @@
-package org.mak.sample.springdata.jpa.oracle.security.domain;
+package org.mak.sample.springdata.jpa.basic.domain.security;
 
 import lombok.*;
 

@@ -21,7 +21,10 @@
     <modules>
         <module>basic</module>
         <module>oracle</module>
+        <module>generic</module>
+        <module>querydsl</module>
     </modules>
+
     <dependencies>
         <!--DATA-->
         <dependency>

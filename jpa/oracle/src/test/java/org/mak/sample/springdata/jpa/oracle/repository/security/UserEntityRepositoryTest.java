@@ -3,11 +3,11 @@ package org.mak.sample.springdata.jpa.oracle.repository.security;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mak.sample.springdata.jpa.oracle.security.domain.User;
-import org.mak.sample.springdata.jpa.oracle.security.repository.UserRepository;
+import org.mak.sample.springdata.jpa.oracle.domain.security.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
@@ -19,6 +19,7 @@ public class UserEntityRepositoryTest {
     private UserRepository userRepository;
 
     @Test
+    @Rollback(false)
     public void testSaveUser() {
         User user = new User().builder().username("mehdi").password("pass").build();
         userRepository.save(user);

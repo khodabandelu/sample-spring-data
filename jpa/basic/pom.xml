@@ -8,6 +8,8 @@
     <name>sample-spring-data-jpa-basic</name>
     <description>Sample project for Spring Data Jpa</description>
 
+    <version>0.0.1-SNAPSHOT</version>
+
     <parent>
         <groupId>org.mak.sample.springdata</groupId>
         <artifactId>sample-spring-data-jpa</artifactId>

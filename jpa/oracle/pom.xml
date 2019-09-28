@@ -9,7 +9,7 @@
     <description>Sample project for Spring Data Jpa</description>
 
     <parent>
-        <groupId>org.mak.sample.springdata</groupId>
+        <groupId>org.mak.sample</groupId>
         <artifactId>sample-spring-data-jpa</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>

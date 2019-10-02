@@ -38,7 +38,7 @@ public class UserEntityRepositoryTest {
     }
 
     @Test
-    public void testUpdateUser(){
+    public void testUpdateUser() {
         User user = new User().builder().username("mehdi").password("pass").build();
         User savedUser = userRepository.save(user);
         User updatedUser = Optional.of(userRepository
@@ -67,6 +67,18 @@ public class UserEntityRepositoryTest {
         userRepository.save(user);
         userRepository.save(user2);
         Assert.assertNotNull(userRepository.findAll(UserSpecifications.UserIncludeUsername("i")));
+    }
+
+    @Test
+    public void testGetAllUser() {
+        User user = new User().builder().username("mehdi").password("pass").build();
+        User user2 = new User().builder().username("ali").password("pass").build();
+        userRepository.save(user);
+        userRepository.save(user2);
+        Assert.assertNotNull(userRepository.getAll());
+        for (User user3 : userRepository.getAll()) {
+            System.out.println(user3.getId());
+        }
     }
 
     @Test

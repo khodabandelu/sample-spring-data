@@ -1,8 +1,11 @@
 package org.mak.sample.springdata.jpa.generic.domain.security;
 
 import lombok.*;
+import org.mak.sample.springdata.jpa.generic.domain.BaseEntity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Getter
@@ -11,10 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Builder
 @Table(name = "core_user")
-public class User {
-    @Id
-    @GeneratedValue
-    private Long id;
+public class User extends BaseEntity<String> {
 
     @Column(unique = true, length = 50, nullable = false)
     private String username;

@@ -15,15 +15,24 @@ public class UserRepositoryCustomImpl extends GenericRepositoryImpl<User,String>
     @PersistenceContext
     EntityManager em;
 
+    @Autowired
+    UserRepository userRepository;
+
     public UserRepositoryCustomImpl(EntityManager em) {
         super(User.class, em);
     }
 
     @Override
-    public User findByUser(String userId) {
+    public User findByUser(String username) {
         Query query = em.createNativeQuery("SELECT u.* FROM core_user as u " +
-                "WHERE u.id = ?", User.class);
-        query.setParameter(1,userId);
+                "WHERE u.username like ?", User.class);
+        query.setParameter(1,username);
         return (User) query.getSingleResult();
     }
+
+    @Override
+    public User getByUsername(String username) {
+        return userRepository.findByUsername(username).get();
+    }
+
 }

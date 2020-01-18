@@ -10,6 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
 
+import static org.hamcrest.CoreMatchers.is;
+
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class UserEntityRepositoryTest {
@@ -28,10 +30,31 @@ public class UserEntityRepositoryTest {
     }
 
     @Test
-    public void testGetUser() {
+    public void testFindUsername() {
         User user = new User().builder().username("mehdi").password("pass").build();
         userRepository.save(user);
         User savedUser = userRepository.findByUsername("mehdi").orElse(null);
+        Assert.assertNotNull(savedUser);
+        Assert.assertEquals(user.getUsername(), savedUser.getUsername());
+        Assert.assertEquals(user.getPassword(), savedUser.getPassword());
+    }
+
+    @Test
+    public void testGetUsername() {
+        User user = new User().builder().username("mehdi").password("pass").build();
+        userRepository.save(user);
+        User savedUser = userRepository.getByUsername("mehdi");
+        Assert.assertNotNull(savedUser);
+        Assert.assertEquals(user.getUsername(), savedUser.getUsername());
+        Assert.assertEquals(user.getPassword(), savedUser.getPassword());
+    }
+
+
+    @Test
+    public void testFindUser() {
+        User user = new User().builder().username("mehdi").password("pass").build();
+        userRepository.save(user);
+        User savedUser = userRepository.findByUser("mehdi");
         Assert.assertNotNull(savedUser);
         Assert.assertEquals(user.getUsername(), savedUser.getUsername());
         Assert.assertEquals(user.getPassword(), savedUser.getPassword());
@@ -66,7 +89,7 @@ public class UserEntityRepositoryTest {
         User user2 = new User().builder().username("ali").password("pass").build();
         userRepository.save(user);
         userRepository.save(user2);
-        Assert.assertNotNull(userRepository.findAll(UserSpecifications.UserIncludeUsername("i")));
+        Assert.assertThat(userRepository.findAll(UserSpecifications.UserIncludeUsername("i")).size(),is(2));
     }
 
     @Test
@@ -86,5 +109,14 @@ public class UserEntityRepositoryTest {
         User user = new User().builder().username("mehdi").password("pass").build();
         User savedUser = userRepository.save(user);
         Assert.assertNotNull(savedUser.getId());
+    }
+
+    @Test
+    public void testfilter() {
+        User user = new User().builder().username("mehdi").password("pass").build();
+        User user2 = new User().builder().username("ali").password("pass").build();
+        userRepository.save(user);
+        userRepository.save(user2);
+        Assert.assertThat(userRepository.findAll().size(),is(1));
     }
 }

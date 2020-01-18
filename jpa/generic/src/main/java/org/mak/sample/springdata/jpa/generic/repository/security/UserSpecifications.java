@@ -7,7 +7,7 @@ import org.springframework.data.jpa.domain.Specification;
 public class UserSpecifications {
     public static Specification<User> UserIncludeUsername(String username) {
         return (root, criteriaQuery, criteriaBuilder) -> {
-            return criteriaBuilder.equal(root.get(User_.username), username);
+            return criteriaBuilder.like(root.get(User_.username),"%"+ username+"%");
         };
     }
 }

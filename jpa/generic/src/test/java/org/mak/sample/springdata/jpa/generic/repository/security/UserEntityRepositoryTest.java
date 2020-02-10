@@ -3,10 +3,15 @@ package org.mak.sample.springdata.jpa.generic.repository.security;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mak.sample.springdata.jpa.generic.SampleSpringDataJpaGenericApplication;
 import org.mak.sample.springdata.jpa.generic.domain.security.User;
+import org.mak.sample.springdata.jpa.generic.repository.specification.UserSpecifications;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import java.util.Optional;
 
@@ -39,7 +44,7 @@ public class UserEntityRepositoryTest {
         Assert.assertEquals(user.getPassword(), savedUser.getPassword());
     }
 
-    @Test
+  /*  @Test
     public void testGetUsername() {
         User user = new User().builder().username("mehdi").password("pass").build();
         userRepository.save(user);
@@ -47,7 +52,7 @@ public class UserEntityRepositoryTest {
         Assert.assertNotNull(savedUser);
         Assert.assertEquals(user.getUsername(), savedUser.getUsername());
         Assert.assertEquals(user.getPassword(), savedUser.getPassword());
-    }
+    }*/
 
 
     @Test

@@ -1,3 +1,4 @@
+/*
 package org.mak.sample.springdata.jpa.generic.repository;
 
 import org.hibernate.Criteria;
@@ -67,3 +68,4 @@ public class AbstractRepositoryImpl<T extends BaseEntity, PK extends Serializabl
         return super.findById(pk);
     }
 }
+*/

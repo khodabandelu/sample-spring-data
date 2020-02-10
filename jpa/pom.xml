@@ -13,6 +13,7 @@
         <groupId>org.mak.sample</groupId>
         <artifactId>sample-spring-data</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <properties>

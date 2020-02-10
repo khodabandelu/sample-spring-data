@@ -8,5 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends GenericRepository<User, String>, UserRepositoryCustom {
+//    @DefaultFilter
     Optional<User> findByUsername(String username);
 }
